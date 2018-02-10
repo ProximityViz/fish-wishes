@@ -1,23 +1,112 @@
 {
-  "playerStart": {"x": 10, "y": 545},
+  "playerStart": {"x": 322, "y": 1690},
   "fieldSize": {
-    "x": 3408,
-    "y": 640
+    "x": 3200,
+    "y": 1900
   },
-  "platformData": [
-      {"x": 0, "y": 430},
-      {"x": 45, "y": 560},
-      {"x": 90, "y": 290},
-      {"x": 0, "y": 140}
-    ],
-  "fireData": [
-    {"x": 200, "y": 538},
-    {"x": 60, "y": 408},
-    {"x": 190, "y": 408},
-    {"x": 180, "y": 268},
-    {"x": 200, "y": 118}
+  "swimmingFish": [
+    {
+      "x": 443,
+      "y": 1397,
+      "sprite": "red"
+    },
+    {
+      "x": 91,
+      "y": 1844,
+      "sprite": "clam"
+    }
   ],
-  "goal": {"x": 20, "y": 90},
-  "barrelFrequency": 5,
-  "barrelSpeed": 120
+  "foregroundData": [
+    {
+      "x": 337,
+      "y": 1072,
+      "sprite": "coralGreen1",
+      "hiding": "blowfish",
+      "scaleX": 1
+    },
+    {
+      "x": 498,
+      "y": 282,
+      "sprite": "coralGreen2",
+      "hiding": "blue",
+      "scaleX": -1
+    },
+    {
+      "x": 169,
+      "y": 1502,
+      "sprite": "coralGreen2",
+      "hiding": "green",
+      "scaleX": 1
+    },
+    {
+      "x": 535,
+      "y": 817,
+      "sprite": "coralGreen3",
+      "hiding": "lightblue",
+      "scaleX": 1
+    },
+    {
+      "x": 548,
+      "y": 583,
+      "sprite": "coralLeafy1",
+      "hiding": "lightgreen",
+      "scaleX": 1
+    },
+    {
+      "x": 134,
+      "y": 396,
+      "sprite": "coralMushroom1",
+      "hiding": "lileel",
+      "scaleX": 1
+    },
+    {
+      "x": 85,
+      "y": 396,
+      "sprite": "coralMushroom1",
+      "hiding": "orange",
+      "scaleX": 1
+    },
+    {
+      "x": 268,
+      "y": 422,
+      "sprite": "coralPurple1",
+      "hiding": "longeel",
+      "scaleX": 1
+    },
+    {
+      "x": 124,
+      "y": 902,
+      "sprite": "coralPurple1",
+      "hiding": "pink",
+      "scaleX": 1
+    },
+    {
+      "x": 709,
+      "y": 662,
+      "sprite": "coralPurple2",
+      "hiding": "purple",
+      "scaleX": 1
+    },
+    {
+      "x": 2664,
+      "y": 1802,
+      "sprite": "darkGroundPurple1",
+      "hiding": "undead",
+      "scaleX": 1
+    },
+    {
+      "x": 946,
+      "y": 1688,
+      "sprite": "lightGroundGreenHuge",
+      "hiding": "snail",
+      "scaleX": 1
+    },
+    {
+      "x": 506,
+      "y": 1802,
+      "sprite": "lightGroundRock2",
+      "hiding": "starfish",
+      "scaleX": 1
+    }
+  ]
 }
