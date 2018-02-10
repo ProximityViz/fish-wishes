@@ -66,9 +66,12 @@ var GameState = {
 
     var style = { font: '20px Arial', fill: '#fff' };
     this.fishSpecies = _.uniq(_.concat(_.map(this.levelData.foregroundData, 'hiding'), _.map(this.levelData.swimmingFish, 'sprite')));
+    this.fishSpecies = _.remove(this.fishSpecies, function(species) {
+      return species; // remove any falsy values
+    });
     this.scoreText = this.game.add.text(10, 20, '0/' + this.fishSpecies.length + ' species collected', style);
+    // FIXME: score text should always be above everything
     this.scoreText.fixedToCamera = true;
-    // TODO: right align this; probably move to right side of screen
 
     this.caughtSpecies = []; // FIXME: should game state like this live somewhere else?
 

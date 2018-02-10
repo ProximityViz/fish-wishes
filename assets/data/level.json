@@ -1,5 +1,5 @@
 {
-  "playerStart": {"x": 322, "y": 1690},
+  "playerStart": {"x": 1792, "y": 1086},
   "fieldSize": {
     "x": 3200,
     "y": 1900
@@ -11,12 +11,48 @@
       "sprite": "red"
     },
     {
+      "x": 1413,
+      "y": 217,
+      "sprite": "red"
+    },
+    {
+      "x": 2308,
+      "y": 721,
+      "sprite": "red"
+    },
+    {
+      "x": 2369,
+      "y": 1244,
+      "sprite": "blue"
+    },
+    {
+      "x": 2400,
+      "y": 1281,
+      "sprite": "blue"
+    },
+    {
+      "x": 2381,
+      "y": 1342,
+      "sprite": "blue"
+    },
+    {
       "x": 91,
       "y": 1844,
       "sprite": "clam"
+    },
+    {
+      "x": 844,
+      "y": 960,
+      "sprite": "pink"
     }
   ],
   "foregroundData": [
+    {
+      "x": 1019,
+      "y": 1640,
+      "sprite": "lightGroundOrange1",
+      "scaleX": 1
+    },
     {
       "x": 337,
       "y": 1072,
@@ -39,15 +75,67 @@
       "scaleX": 1
     },
     {
+      "x": 2113,
+      "y": 613,
+      "sprite": "coralGreen2",
+      "hiding": "green",
+      "scaleX": 1
+    },
+    {
       "x": 535,
       "y": 817,
       "sprite": "coralGreen3",
+      "scaleX": 1
+    },
+    {
+      "x": 1498,
+      "y": 961,
+      "sprite": "coralGreen3",
+      "hiding": "starfish",
+      "scaleX": 1
+    },
+    {
+      "x": 2961,
+      "y": 961,
+      "sprite": "coralGreen4",
+      "scaleX": 1
+    },
+    {
+      "x": 2996,
+      "y": 961,
+      "sprite": "coralGreen4",
       "hiding": "lightblue",
+      "scaleX": 1
+    },
+    {
+      "x": 3090,
+      "y": 900,
+      "sprite": "coralGreen4",
+      "scaleX": 1
+    },
+    {
+      "x": 3111,
+      "y": 910,
+      "sprite": "coralGreen4",
       "scaleX": 1
     },
     {
       "x": 548,
       "y": 583,
+      "sprite": "coralLeafy1",
+      "hiding": "lightgreen",
+      "scaleX": 1
+    },
+    {
+      "x": 1621,
+      "y": 710,
+      "sprite": "coralLeafy1",
+      "hiding": "lightgreen",
+      "scaleX": 1
+    },
+    {
+      "x": 1835,
+      "y": 1534,
       "sprite": "coralLeafy1",
       "hiding": "lightgreen",
       "scaleX": 1
@@ -67,15 +155,48 @@
       "scaleX": 1
     },
     {
+      "x": 3170,
+      "y": 1407,
+      "sprite": "coralMushroom1",
+      "hiding": "orange",
+      "scaleX": 1
+    },
+    {
       "x": 268,
       "y": 422,
       "sprite": "coralPurple1",
-      "hiding": "longeel",
+      "hiding": "lileel",
       "scaleX": 1
     },
     {
       "x": 124,
       "y": 902,
+      "sprite": "coralPurple1",
+      "hiding": "pink",
+      "scaleX": 1
+    },
+    {
+      "x": 1702,
+      "y": 900,
+      "sprite": "coralPurple1",
+      "hiding": "green",
+      "scaleX": 1
+    },
+    {
+      "x": 2923,
+      "y": 1123,
+      "sprite": "coralPurple1",
+      "scaleX": 1
+    },
+    {
+      "x": 3057,
+      "y": 1200,
+      "sprite": "coralPurple1",
+      "scaleX": 1
+    },
+    {
+      "x": 3151,
+      "y": 1225,
       "sprite": "coralPurple1",
       "hiding": "pink",
       "scaleX": 1
@@ -88,24 +209,85 @@
       "scaleX": 1
     },
     {
+      "x": 2062,
+      "y": 1257,
+      "sprite": "coralPurple2",
+      "hiding": "purple",
+      "scaleX": 1
+    },
+    {
+      "x": 2225,
+      "y": 1759,
+      "sprite": "darkGroundGreen1",
+      "hiding": "undead",
+      "scaleX": 1
+    },
+    {
+      "x": 3097,
+      "y": 1882,
+      "sprite": "darkGroundGreen1",
+      "hiding": "undead",
+      "scaleX": -1
+    },
+    {
       "x": 2664,
       "y": 1802,
       "sprite": "darkGroundPurple1",
+      "scaleX": 1
+    },
+    {
+      "x": 2823,
+      "y": 1890,
+      "sprite": "darkGroundRock1",
       "hiding": "undead",
+      "scaleX": 1
+    },
+    {
+      "x": 1557,
+      "y": 1777,
+      "sprite": "lightGroundGreen1",
       "scaleX": 1
     },
     {
       "x": 946,
       "y": 1688,
       "sprite": "lightGroundGreenHuge",
-      "hiding": "snail",
+      "hiding": "longeel",
       "scaleX": 1
     },
     {
-      "x": 506,
+      "x": 517,
+      "y": 1628,
+      "sprite": "lightGroundOrange1",
+      "hiding": "purple",
+      "scaleX": -1
+    },
+    {
+      "x": 1119,
+      "y": 1694,
+      "sprite": "lightGroundRock1",
+      "hiding": "starfish",
+      "scaleX": 1
+    },
+    {
+      "x": 2115,
+      "y": 1556,
+      "sprite": "lightGroundRock1",
+      "hiding": "starfish",
+      "scaleX": 1
+    },
+    {
+      "x": 377,
       "y": 1802,
       "sprite": "lightGroundRock2",
       "hiding": "starfish",
+      "scaleX": 1
+    },
+    {
+      "x": 1399,
+      "y": 1894,
+      "sprite": "lightGroundRock3",
+      "hiding": "snail",
       "scaleX": 1
     }
   ]
