@@ -6,8 +6,10 @@ var PreloadState = {
 
     this.load.image('clickplate', 'assets/images/clickplate.png');
     this.load.image('background', 'assets/images/background.png');
+    this.load.image('bubble1', 'assets/images/bubble1.png');
     this.load.spritesheet('player', 'assets/images/player.png', 66, 100, 11, 0, 14);
     // TODO: can i have a shadow?
+
     this.load.image('lightGroundGreenHuge', 'assets/images/foreground/light_ground_green_huge.png');
     this.load.image('coralGreen1', 'assets/images/foreground/coral_green_1.png');
     this.load.image('coralGreen2', 'assets/images/foreground/coral_green_2.png');

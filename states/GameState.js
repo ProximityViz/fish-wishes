@@ -28,8 +28,22 @@ var GameState = {
     this.caughtSpecies = []; // FIXME: should game state like this live somewhere else?
 
     this.createClickplate();
+    this.createBubbles();
     this.createForegroundItems();
     this.createSwimmingFish();
+  },
+  createBubbles: function() {
+    var emitter = game.add.emitter(game.world.centerX, game.world.height, 40);
+    emitter.width = game.world.width;
+    emitter.gravity = 0;
+    emitter.makeParticles('bubble1');
+    emitter.minParticleScale = 0.1;
+    emitter.maxParticleScale = 1;
+    emitter.setYSpeed(-100, -300);
+    emitter.setXSpeed(-5, 5);
+    emitter.minRotation = 0;
+    emitter.maxRotation = 0;
+    emitter.start(false, 15000, 250, 0);
   },
   createSwimmingFish: function() {
     this.swimmingFish = this.add.group();
