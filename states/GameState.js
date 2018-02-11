@@ -37,15 +37,19 @@ var GameState = {
 
     this.levelData.swimmingFish.forEach(function(element) {
       var fish = this.swimmingFish.create(element.x, element.y, element.sprite);
-      fish.anchor.setTo(0.5);
-      // TODO: animation
-      fish.scale.x = _.random(0, 1) ? 1 : -1; // face some left and some right
-      fish.inputEnabled = true;
-      fish.events.onInputDown.add(this.collectFish, this);
-      fish.customParams = {
-        name: element.sprite
-      };
+      this.createFish(fish, element.sprite);
     }, this);
+  },
+  createFish: function(fish, name) {
+    fish.anchor.setTo(0.5);
+    // TODO: animation
+    fish.scale.x = _.random(0, 1) ? 1 : -1; // face some left and some right
+    fish.inputEnabled = true;
+    fish.events.onInputDown.add(this.movePlayer, this);
+    fish.customParams = {
+      type: 'fish',
+      name: name
+    }
   },
   createForegroundItems: function() {
     this.foregroundItems = this.add.group();
@@ -70,6 +74,9 @@ var GameState = {
     // NOTE: anything clickable need to be "above" the clickplate
   },
   movePlayer: function(sprite, pointer, customTarget) {
+    if (sprite.customParams && sprite.customParams.type === 'fish') {
+      this.lastCaptured = sprite;
+    }
     this.player.targetX = pointer.worldX;
     this.player.targetY = pointer.worldY;
     console.log('moving from point:', Math.floor(this.player.x) + ',', Math.floor(this.player.y));
@@ -91,6 +98,7 @@ var GameState = {
       // this.player.animations.play('idleAnimation') // TODO
       this.player.animations.stop();
       this.player.frame = 1;
+      this.collectFish();
     }, this);
   },
   createLevel: function() {
@@ -111,32 +119,34 @@ var GameState = {
     var fishY = itemBody.position.y + (itemBody.height / 2);
     // TODO: do i want to add the fish to a group?
     var fish = this.add.sprite(fishX, fishY, fishSprite);
-    fish.anchor.setTo(0.5);
-    fish.customParams = {
-      name: fishSprite
-    };
-    fish.scale.x = _.random(0, 1) ? 1 : -1; // face some left and some right
-    fish.inputEnabled = true;
-    fish.events.onInputDown.add(this.collectFish, this);
+    this.createFish(fish, fishSprite);
   },
-  collectFish: function(fish, event) {
-    console.log(fish.customParams.name, 'collected!');
-    this.score += 1;
-    // check for uniqueness of species
-    if (_.includes(this.caughtSpecies, fish.customParams.name)) {
-      console.log('duplicate of already caught');
-    } else {
-      console.log('new species!');
-      this.caughtSpecies.push(fish.customParams.name);
-      console.log('species caught:', JSON.stringify(this.caughtSpecies));
-    }
+  collectFish: function() {
+    // fish.events.onInputDown.add(this.movePlayer, this);
+    // this.movePlayer(fish, event);
+    // TODO: block ui?
+    // TODO: don't remove the fish until the player has finished moving
+    if (this.lastCaptured) {
+      var fish = this.lastCaptured;
+      console.log(fish.customParams.name, 'collected!');
+      this.score += 1;
+      // check for uniqueness of species
+      if (_.includes(this.caughtSpecies, fish.customParams.name)) {
+        console.log('duplicate of already caught');
+      } else {
+        console.log('new species!');
+        this.caughtSpecies.push(fish.customParams.name);
+        console.log('species caught:', JSON.stringify(this.caughtSpecies));
+      }
 
-    this.scoreText.text = this.caughtSpecies.length + '/' + this.fishSpecies.length + ' species collected';
-    // TODO: possibly freeze the UI and animate the player to the fish before collection
-    // TODO: animate the fish disappearing
-    // TODO: maybe temporarily change the player's z-index to be what the fish's was (change it back when the player moves)
-    fish.kill();
-    this.checkForWin();
+      this.scoreText.text = this.caughtSpecies.length + '/' + this.fishSpecies.length + ' species collected';
+      // TODO: possibly freeze the UI and animate the player to the fish before collection
+      // TODO: animate the fish disappearing
+      // TODO: maybe temporarily change the player's z-index to be what the fish's was (change it back when the player moves)
+      this.lastCaptured = null;
+      fish.kill();
+      this.checkForWin();
+    }
   },
   checkForWin: function() {
     if (this.caughtSpecies.length >= this.fishSpecies.length) {
